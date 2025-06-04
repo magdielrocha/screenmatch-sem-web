@@ -7,7 +7,8 @@ public class ConverteDados implements IConverteDados{
     private ObjectMapper mapper = new ObjectMapper();
 
     @Override
-    public <T> T obterDados(String json, Class<T> classe) {
+    public <T> T obterDados(String json, Class<T> classe) { // recebe um json e tranforma ele
+                                                            // na classe que foi passada
         try {
             return mapper.readValue(json, classe);
         } catch (JsonProcessingException e) {
